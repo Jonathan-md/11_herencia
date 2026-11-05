@@ -73,6 +73,17 @@ void Automovil::bajarPasajeros(){
 	}
 }
 
+class Camion : public Vehiculo{
+	private:
+		string carga;
+	public:
+		Camion(string, string, string, float, string);
+		void mostrarCamion();
+		void cambiarCarga();
+};
+
+Camion::Camion(string nP, string col, string marc, float velcm, string carga): Vehiculo(nP,col,marc,velcm){
+}
 
 int main(){
 	
