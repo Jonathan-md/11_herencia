@@ -1,22 +1,19 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
 class Vehiculo{
-	private:
+	protected:
 		string numeroPlaca;
 		string color;
 		string marca;
 		float velocimetro;
 				
 	public:
-		Vehiculo();
+		Vehiculo(string, string, string, float);
 		void mostrarDatos();
 		void cambiarVelocidad();
-		
 };
-
-
-
 
 
 int main(){
