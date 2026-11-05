@@ -39,11 +39,39 @@ class Automovil : public Vehiculo{
 		int cantidadPasajeros;
 		
 	public:
-		Automovil(int,int);
+		Automovil(string, string, string, float, int,int);
 		void mostrarAutomovil();
 		void subirPasajeros();
 		void bajarPasajeros();
 };
+
+Automovil::Automovil(string nP, string col, string marc, float velcm, int cantPuertas, int cantPasj) : Vehiculo(nP,col,marc,velcm){
+	cantidadPuertas=cantPuertas;
+	cantidadPasajeros=cantPasj;
+}
+
+void Automovil::mostrarAutomovil(){
+	cout<<"Numero de puertas: "<<cantidadPuertas<<endl;
+	cout<<"Numero de pasajeros: "<<cantidadPasajeros<<endl;
+}
+
+void Automovil::subirPasajeros(){
+	int sumPasajeros;
+	
+	if(sumPasajeros>0){
+		cantidadPasajeros=cantidadPasajeros+sumPasajeros;
+	}
+}
+
+void Automovil::bajarPasajeros(){
+	int resPasajeros;
+	
+	if(cantidadPasajeros>=0){
+		if(cantidadPasajeros>=resPasajeros){
+			cantidadPasajeros=cantidadPasajeros-resPasajeros;
+		}
+	}
+}
 
 
 int main(){
