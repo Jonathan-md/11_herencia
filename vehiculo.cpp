@@ -22,6 +22,15 @@ Vehiculo::Vehiculo(string nP, string col, string marc, float velcm){
 	velocimetro=velcm;
 }
 
+void Vehiculo::mostrarDatos(){
+	cout<<"Numero de placa: "<<numeroPlaca<<endl;
+	cout<<"Color: "<<color<<endl;
+	cout<<"Marca: "<<marca<<endl;
+	cout<<"Velocidad: "<<velocimetro<<endl;
+}
+
+void Vehiculo::cambiarVelocidad(){
+}
 
 int main(){
 	
