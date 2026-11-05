@@ -32,6 +32,20 @@ void Vehiculo::mostrarDatos(){
 void Vehiculo::cambiarVelocidad(){
 }
 
+
+class Automovil : public Vehiculo{
+	private:
+		int cantidadPuertas;
+		int cantidadPasajeros;
+		
+	public:
+		Automovil(int,int);
+		void mostrarAutomovil();
+		void subirPasajeros();
+		void bajarPasajeros();
+};
+
+
 int main(){
 	
 	
