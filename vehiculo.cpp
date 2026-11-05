@@ -15,6 +15,13 @@ class Vehiculo{
 		void cambiarVelocidad();
 };
 
+Vehiculo::Vehiculo(string nP, string col, string marc, float velcm){
+	numeroPlaca=nP;
+	color=col;
+	marca=marc;
+	velocimetro=velcm;
+}
+
 
 int main(){
 	
