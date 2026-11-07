@@ -30,6 +30,13 @@ void Vehiculo::mostrarDatos(){
 }
 
 void Vehiculo::cambiarVelocidad(){
+	float cambiaVelocidad;
+	
+	cout<<"Ingrese la nueva velocidad: ";
+	cin>>cambiaVelocidad;
+	if(cambiaVelocidad>0){
+		velocimetro=cambiaVelocidad;
+	}
 }
 
 
@@ -70,7 +77,7 @@ void Automovil::bajarPasajeros(){
 	
 	cout<<"Ingrese la cantidad de pasajeros que van a bajar del Automovil:";
 	cin>>resPasajeros;
-	if(cantidadPasajeros>=0){
+	if(cantidadPasajeros>0){
 		if(cantidadPasajeros>=resPasajeros){
 			cantidadPasajeros=cantidadPasajeros-resPasajeros;
 		}
@@ -91,7 +98,7 @@ Camion::Camion(string nP, string col, string marc, float velcm, float carg): Veh
 }
 
 void Camion::mostrarCamion(){
-	cout<<"Carga: "<<carga<< "Kg."<<endl;
+	cout<<"Carga: "<<carga<< " Kg."<<endl;
 }
 
 void Camion::cambiarCarga(){
