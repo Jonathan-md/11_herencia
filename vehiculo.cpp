@@ -23,7 +23,7 @@ Vehiculo::Vehiculo(string nP, string col, string marc, float velcm){
 }
 
 void Vehiculo::mostrarDatos(){
-	cout<<"Numero de placa: "<<numeroPlaca<<endl;
+	cout<<"Placa: "<<numeroPlaca<<endl;
 	cout<<"Color: "<<color<<endl;
 	cout<<"Marca: "<<marca<<endl;
 	cout<<"Velocidad: "<<velocimetro<<" Km/h."<<endl;
@@ -58,8 +58,9 @@ Automovil::Automovil(string nP, string col, string marc, float velcm, int cantPu
 }
 
 void Automovil::mostrarAutomovil(){
-	cout<<"Numero de puertas: "<<cantidadPuertas<<endl;
-	cout<<"Numero de pasajeros: "<<cantidadPasajeros<<endl;
+	mostrarDatos();
+	cout<<"N° Puertas: "<<cantidadPuertas<<endl;
+	cout<<"N° Pasajeros: "<<cantidadPasajeros<<endl;
 }
 
 void Automovil::subirPasajeros(){
@@ -98,6 +99,7 @@ Camion::Camion(string nP, string col, string marc, float velcm, float carg): Veh
 }
 
 void Camion::mostrarCamion(){
+	mostrarDatos();
 	cout<<"Carga: "<<carga<< " Kg."<<endl;
 }
 
@@ -113,7 +115,60 @@ void Camion::cambiarCarga(){
 
 
 int main(){
+	string nP, col ,marc;
+	float velcm;
+	int cantPuertas, cantPasj;
 	
+	cout<<"\tDATOS DEL AUTOMOVIL"<<endl;
+	cout<<"\nIngrese la placa: ";
+	cin>>nP;
+	cout<<"\nIngrese el color: ";
+	cin>>col;
+	cout<<"\nIngrese la marca: ";
+	cin>>marc;
+	cout<<"\nIngrese la velocidad: ";
+	cin>>velcm;
+	cout<<"\nIngrese la cantidad de puertas: ";
+	cin>>cantPuertas;
+	cout<<"\nIngrese la cantidad de pasajeros: ";
+	cin>>cantPasj;
+	Automovil autom1(nP,col,marc,velcm,cantPuertas,cantPasj);
 	
+	float carg;
+	
+	cout<<"\n\n\tDATOS DEL CAMION"<<endl;
+	cout<<"\nIngrese la placa: ";
+	cin>>nP;
+	cout<<"\nIngrese el color: ";
+	cin>>col;
+	cout<<"\nIngrese la marca: ";
+	cin>>marc;
+	cout<<"\nIngrese la velocidad: ";
+	cin>>velcm;
+	cout<<"\nIngrese el peso de la carga: ";
+	cin>>carg;
+	Camion camion1(nP,col,marc,velcm,carg);
+	
+	cout<<"\n AUTOMOVIL"<<endl;
+    autom1.mostrarAutomovil();
+
+    cout<<"\n CAMION"<<endl;
+    camion1.mostrarCamion();
+
+    cout<<"\n MODIFICAR AUTOMOVIL"<<endl;
+    autom1.cambiarVelocidad();
+    autom1.subirPasajeros();
+    autom1.bajarPasajeros();
+
+    cout<<"\n MODIFICAR CAMION "<<endl;
+    camion1.cambiarVelocidad();
+    camion1.cambiarCarga();
+
+    cout<<"\n AUTOMOVIL ACTUALIZADO "<<endl;
+    autom1.mostrarAutomovil();
+
+    cout<<"\n CAMION ACTUALIZADO "<<endl;
+    camion1.mostrarCamion();
+
 	return 0;	
 }
