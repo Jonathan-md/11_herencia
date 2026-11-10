@@ -19,6 +19,7 @@ void Figura::mostrarColor(){
 	cout<<"Color: "<<color<<endl;
 }
 
+
 class Circulo: public Figura{
 	private:
 		float radio;
@@ -45,6 +46,27 @@ void Circulo::calcularPerimetro(){
 	perimetro= 2*3.1416*radio;
 	cout<<"Perimetro del circulo: "<<perimetro<<endl;
 }
+
+
+class Rectangulo: public Figura{
+	private:
+		float base;
+		float altura;
+	public:
+		Rectangulo(string,float,float);
+		void calcularArea();
+};
+
+Rectangulo::Rectangulo(string col,float bas,float alt) : Figura(col){
+	base=bas;
+	altura=alt;
+}
+
+void Rectangulo::calcularArea(){
+	float area;
+	area= base*altura;
+}
+
 
 int main(){
 	
