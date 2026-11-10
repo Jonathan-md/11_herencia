@@ -64,11 +64,84 @@ Rectangulo::Rectangulo(string col,float bas,float alt) : Figura(col){
 
 void Rectangulo::calcularArea(){
 	float area;
+	
 	area= base*altura;
+	cout<<"Area del rectangulo: "<<area<<endl;
+}
+
+
+class Triangulo: public Figura{
+	private:
+		float base;
+		float altura;
+		string tipo;
+	public:
+		Triangulo(string,float,float,string);
+		void calcularArea();
+};
+
+Triangulo::Triangulo(string col,float bas,float alt,string tip):Figura(col){
+	base=bas;
+	altura=alt;
+	tipo=tip;
+}
+
+void Triangulo::calcularArea(){
+	float area;
+	
+	area= (base*altura)/2;
+	cout<<"Area del triangulo: "<<area;
 }
 
 
 int main(){
-	
-	return 0;
+    string colorCIR, colorREC, colorTRI, tipo;
+    float radioCIR, baseREC, alturaREC, baseTRI, alturaTRI;
+
+    cout<<" CIRCULO"<<endl;
+    cout<<"Ingrese el color: ";
+    cin>>colorCIR;
+    cout<<"Ingrese el radio: ";
+    cin>>radioCIR;
+
+    Circulo c1(colorCIR,radioCIR);
+
+    cout<<"\n RECTANGULO"<<endl;
+    cout<<"Ingrese el color: ";
+    cin>>colorREC;
+    cout<<"Ingrese la base: ";
+    cin>>baseREC;
+    cout<<"Ingrese la altura: ";
+    cin>>alturaREC;
+
+    Rectangulo r1(colorREC,baseREC,alturaREC);
+
+    cout<<"\n TRIANGULO"<<endl;
+    cout<<"Ingrese el color: ";
+    cin>>colorTRI;
+    cout<<"Ingrese la base: ";
+    cin>>baseTRI;
+    cout<<"Ingrese la altura: ";
+    cin>>alturaTRI;
+    cout<<"Ingrese el tipo: ";
+    cin>>tipo;
+
+    Triangulo t1(colorTRI,baseTRI,alturaTRI,tipo);
+
+    cout<<"\n\n\tRESULTADOS"<<endl;
+
+    cout<<"\n CIRCULO"<<endl;
+    c1.mostrarColor();
+    c1.calcularArea();
+    c1.calcularPerimetro();
+
+    cout<<"\nRECTANGULO"<<endl;
+    r1.mostrarColor();
+    r1.calcularArea();
+
+    cout<<"\nTRIANGULO"<<endl;
+    t1.mostrarColor();
+    t1.calcularArea();
+
+    return 0;
 }
